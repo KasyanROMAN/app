@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from django.conf.global_settings import MEDIA_ROOT, MEDIA_URL, STATIC_ROOT, STATICFILES_DIRS
+from django.conf.global_settings import AUTH_USER_MODEL, MEDIA_ROOT, MEDIA_URL, STATIC_ROOT, STATICFILES_DIRS
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,10 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.postgres',
     "debug_toolbar",
-    'users',
     'main',
     'goods',
-    
+    'users',
+    'carts',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,4 @@ INTERNAL_IPS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'users.User'
